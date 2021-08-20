@@ -1,0 +1,19 @@
+@import "../../assets/scss/BreakPoint.scss";
+@import "../../assets/scss/Fonts.scss";
+@import "../../assets/scss/Icomoon.scss";
+
+.landing-container{
+    margin-top: 5rem;
+    .header-container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .hello{
+        background-color: red;
+        font-family: "Montserrat";
+        @include bp-from(m){
+            background-color: yellow;
+        }
+    }
+}

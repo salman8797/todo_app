@@ -1,0 +1,9 @@
+.textArea-container{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    textarea{
+        min-height: 10rem;
+        
+    }
+}

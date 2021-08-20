@@ -1,0 +1,29 @@
+
+
+.form-container{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    background-color: #fff;
+    padding : 2rem;
+    &:focus{
+        outline : unset;
+    }
+    form{
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+    }
+    .two-field-container{
+        justify-content: space-between;
+    }
+    .button-container{
+        display: flex;
+        justify-content: space-between;
+        align-self: flex-end;
+        width: 20%;
+        &:focus{
+            outline : unset;
+        }
+    }
+}

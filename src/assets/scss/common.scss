@@ -1,0 +1,21 @@
+// font colors
+.primary-color{
+    color : #ff724c;
+}
+.secondary-color{
+    color : #262525
+}
+.optional-color{
+    color :#545353
+}
+
+//background colors
+
+.primary-background-color{
+    background-color:#ff724c ;
+}
+button{
+    &:focus{
+        outline : unset;
+    }
+}

@@ -1,0 +1,58 @@
+@mixin bp($bpMin, $bpMax: null) {
+    $min: if(map-has-key($breakpoints, $bpMin), map-get($breakpoints, $bpMin), null);
+    $max: if(map-has-key($breakpoints, $bpMax), map-get($breakpoints, $bpMax), null);
+
+    @if $min == null and $max == null {
+        @warn "No breakpoints matched `#{$bpMin}`(min) or `#{$bpMax}`(max). "
+      + "Available breakpoints are: #{map-keys($breakpoints)}.";
+    } @else {
+        @if $min and $max {
+            @media (min-width: #{$min}) and (max-width: #{$max - 1}) {
+                @content;
+            }
+        } @else if $max {
+            @media (max-width: #{$max - 1}) {
+                @content;
+            }
+        } @else if $min {
+            @media (min-width: #{$min}) {
+                @content;
+            }
+        }
+    }
+}
+
+@mixin bp-from($breakpoint) {
+    @include bp($breakpoint) {
+        @content;
+    }
+}
+
+@mixin bp-until($breakpoint) {
+    @include bp(null, $breakpoint) {
+        @content;
+    }
+}
+
+@mixin bp-between($min, $max) {
+    @include bp($min, max) {
+        @content;
+    }
+}
+
+@mixin bp-only($min) {
+    $max: nextBreakpointName($name) - 1;
+    @include bp($min, max) {
+        @content;
+    }
+}
+
+$breakpoints: (
+  s: 0px,
+  xs:320px,
+  xxs:360px,
+  xm:414px,
+  m: 768px,
+  l: 1024px,
+  xl: 1440px
+);

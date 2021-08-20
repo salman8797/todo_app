@@ -1,0 +1,24 @@
+@import "../../assets/scss/Icomoon.scss";
+
+.tab-container{
+    text-align: left;
+    table{
+        border-collapse: collapse;
+        width: 100%;
+        td,th{
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+            
+        }
+        .actions{
+            span{
+                background-color: #3f51b5;
+                color: #fff;
+                padding: 0.6rem;
+                font-size: 0.8rem;
+                border-radius: 0.2rem;
+            }
+        }
+    }
+}
